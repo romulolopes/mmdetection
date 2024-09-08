@@ -7,7 +7,7 @@ model = dict(
         bbox_head=dict(num_classes=25), mask_head=dict(num_classes=25)))
 
 # Modify dataset related settings
-data_root = '../dataset/'
+data_root = 'data/autokary2022/'
 metainfo = {
     'classes': ( '0', '1','2', '3', '4', '5' , '6' , '7',
     '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18',
