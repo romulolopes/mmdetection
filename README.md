@@ -1,3 +1,23 @@
+criar imagem
+
+`docker build -t mmdetection .`
+
+`docker build`
+
+run container
+
+`sudo docker run --gpus all -it --name mmdetection -v /home/edson-cavalcanti/projetos/autokary2022/dataset:/mmdetection/data/autokary2022/ mmdetection bash`
+
+Inside docker container
+
+`export CUDA_VISIBLE_DEVICES=0`
+
+Train
+
+`python tools/train.py configs/mask_rcnn/autokary2022.py `
+
+
+
 <div align="center">
   <img src="resources/mmdet-logo.png" width="600"/>
   <div>&nbsp;</div>
