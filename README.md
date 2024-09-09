@@ -6,7 +6,9 @@ criar imagem
 
 run container
 
-`sudo docker run --gpus all -it --name mmdetection -v /home/edson-cavalcanti/projetos/autokary2022/dataset:/mmdetection/data/autokary2022/ mmdetection bash`
+ls
+`sudo docker run --gpus all -it --name mmdetection -v /home/edson-cavalcanti/projetos/autokary2022/mmdetection:/mmdetection -v /home/edson-cavalcanti/projetos/autokary2022/dataset:/mmdetection/data/autokary2022/ mmdetection bash`
+
 
 Inside docker container
 
