@@ -31,6 +31,9 @@ RUN apt-get update \
 RUN pip install openmim && \
     mim install "mmengine>=0.7.1" "mmcv>=2.0.0rc4"
 
+# Install Dagshub and mlflow
+RUN pip install dagshub mlflow 
+
 # Install MMDetection
 RUN conda clean --all \
     && git clone https://github.com/romulolopes/mmdetection.git /mmdetection \
