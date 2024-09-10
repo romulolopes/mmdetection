@@ -41,18 +41,8 @@ test_dataloader = dict(
 val_evaluator = dict(ann_file=data_root + 'val/_annotations.coco.json')
 test_evaluator = dict(ann_file=data_root + 'test/_annotations.coco.json')
 
-import os 
-import os
-from mmengine.hooks import (CheckpointHook, DistSamplerSeedHook, IterTimerHook,
-                            LoggerHook, ParamSchedulerHook)
-from mmengine.runner import LogProcessor
-from mmengine.visualization import LocalVisBackend
 
-from mmdet.engine.hooks import DetVisualizationHook
-from mmdet.visualization import DetLocalVisualizer
 from mmdet.engine.hooks import MlflowLoggerHook
-
-
 dagshub_uri = os.environ.get('DAGSHUB_MLFLOW')
 
 custom_hooks = dict(
