@@ -41,7 +41,7 @@ test_dataloader = dict(
 val_evaluator = dict(ann_file=data_root + 'val/_annotations.coco.json')
 test_evaluator = dict(ann_file=data_root + 'test/_annotations.coco.json')
 
-
+import os
 from mmdet.engine.hooks import MlflowLoggerHook
 dagshub_uri = os.environ.get('DAGSHUB_MLFLOW')
 
