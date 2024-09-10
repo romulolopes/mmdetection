@@ -46,7 +46,7 @@ from mmdet.engine.hooks import MlflowLoggerHook
 #dagshub_uri = os.environ.get('DAGSHUB_MLFLOW')
 
 custom_hooks = dict(
-    logger=dict(type=MlflowLoggerHook, interval=50 , exp_name="Nome Teste",uri=dagshub_uri )
+    logger=dict(type=MlflowLoggerHook, interval=50 , exp_name="Nome Teste" )
 )
 
 # We can use the pre-trained Mask RCNN model to obtain higher performance
