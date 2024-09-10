@@ -40,12 +40,13 @@ class MlflowLoggerHook(LoggerHook):
                  tags: Optional[Dict] = None,
                  params: Optional[Dict] = None,
                  log_model: bool = True,
-                 interval=10,
+                 interval: int = 10,
                  ignore_last: bool = True,
                  reset_flag: bool = False,
                  by_epoch: bool = True,
                  uri=None):
-        super().__init__(interval, ignore_last, reset_flag, by_epoch)
+        super().__init__(interval=interval, ignore_last=ignore_last)
+        #super().__init__(interval, ignore_last, reset_flag, by_epoch)
         self.import_mlflow()
         self.exp_name = exp_name
         self.tags = tags
