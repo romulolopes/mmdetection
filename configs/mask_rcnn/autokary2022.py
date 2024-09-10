@@ -1,3 +1,4 @@
+import os 
 # The new config inherits a base config to highlight the necessary modification
 _base_ = '../mask_rcnn/mask-rcnn_r50-caffe_fpn_ms-poly-1x_coco.py'
 
@@ -41,6 +42,17 @@ test_dataloader = dict(
 val_evaluator = dict(ann_file=data_root + 'val/_annotations.coco.json')
 test_evaluator = dict(ann_file=data_root + 'test/_annotations.coco.json')
 
+
+dagshub_uri = os.environ.get('DAGSHUB_MLFLOW')
+
+default_hooks = dict(
+    timer=dict(type=IterTimerHook),
+    #logger=dict(type=LoggerHook, interval=50),
+    logger=dict(type=MlflowLoggerHook, interval=50 , exp_name="Nome Teste",uri=dagshub_uri ),
+    param_scheduler=dict(type=ParamSchedulerHook),
+    checkpoint=dict(type=CheckpointHook, interval=1),
+    sampler_seed=dict(type=DistSamplerSeedHook),
+    visualization=dict(type=DetVisualizationHook))
 
 # We can use the pre-trained Mask RCNN model to obtain higher performance
 load_from = 'https://download.openmmlab.com/mmdetection/v2.0/mask_rcnn/mask_rcnn_r50_caffe_fpn_mstrain-poly_3x_coco/mask_rcnn_r50_caffe_fpn_mstrain-poly_3x_coco_bbox_mAP-0.408__segm_mAP-0.37_20200504_163245-42aa3d00.pth'
