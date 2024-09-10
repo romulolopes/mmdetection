@@ -1,15 +1,3 @@
-import os 
-import os
-from mmengine.hooks import (CheckpointHook, DistSamplerSeedHook, IterTimerHook,
-                            LoggerHook, ParamSchedulerHook)
-from mmengine.runner import LogProcessor
-from mmengine.visualization import LocalVisBackend
-
-from mmdet.engine.hooks import DetVisualizationHook
-from mmdet.visualization import DetLocalVisualizer
-from mmdet.engine.hooks import MlflowLoggerHook
-
-
 # The new config inherits a base config to highlight the necessary modification
 _base_ = '../mask_rcnn/mask-rcnn_r50-caffe_fpn_ms-poly-1x_coco.py'
 
@@ -52,6 +40,17 @@ test_dataloader = dict(
 # Modify metric related settings
 val_evaluator = dict(ann_file=data_root + 'val/_annotations.coco.json')
 test_evaluator = dict(ann_file=data_root + 'test/_annotations.coco.json')
+
+import os 
+import os
+from mmengine.hooks import (CheckpointHook, DistSamplerSeedHook, IterTimerHook,
+                            LoggerHook, ParamSchedulerHook)
+from mmengine.runner import LogProcessor
+from mmengine.visualization import LocalVisBackend
+
+from mmdet.engine.hooks import DetVisualizationHook
+from mmdet.visualization import DetLocalVisualizer
+from mmdet.engine.hooks import MlflowLoggerHook
 
 
 dagshub_uri = os.environ.get('DAGSHUB_MLFLOW')
