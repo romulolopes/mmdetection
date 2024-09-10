@@ -1,4 +1,4 @@
-import os
+
 from typing import Dict, Optional
 
 from mmengine.dist import master_only
@@ -45,21 +45,14 @@ class MlflowLoggerHook(LoggerHook):
                  reset_flag: bool = False,
                  by_epoch: bool = True,
                  uri=None):
-        print("------------------------------------")
-        print("Debug start")
-        print("01")
-        super().__init__(interval, ignore_last, reset_flag, by_epoch)
-        print("02")
+        super().__init__(interval, ignore_last, reset_flag, by_epoch,interval_exp_name=1000)
         self.import_mlflow()
-        print("03")
         self.exp_name = exp_name
         self.tags = tags
         self.params = params
         self.log_model = log_model
         self.uri = uri
-        print("04")
-        print("------------------------------------")
-
+        
     def import_mlflow(self) -> None:
         try:
             import mlflow
@@ -74,7 +67,6 @@ class MlflowLoggerHook(LoggerHook):
     @master_only
     def before_run(self, runner) -> None:
         super().before_run(runner)
-        self.uri = os.environ.get('DAGSHUB_MLFLOW')
         self.mlflow.set_tracking_uri(self.uri)
 
         if self.exp_name is not None:
