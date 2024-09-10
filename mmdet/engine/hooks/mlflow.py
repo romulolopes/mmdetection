@@ -40,7 +40,7 @@ class MlflowLoggerHook(LoggerHook):
                  tags: Optional[Dict] = None,
                  params: Optional[Dict] = None,
                  log_model: bool = True,
-                 interval: int = 1000,
+                 interval=10,
                  ignore_last: bool = True,
                  reset_flag: bool = False,
                  by_epoch: bool = True,
