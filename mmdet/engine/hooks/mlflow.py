@@ -1,3 +1,4 @@
+import os
 from typing import Dict, Optional
 
 from mmengine.dist import master_only
@@ -65,7 +66,7 @@ class MlflowLoggerHook(LoggerHook):
     @master_only
     def before_run(self, runner) -> None:
         super().before_run(runner)
-
+        self.uri = os.environ.get('DAGSHUB_MLFLOW')
         self.mlflow.set_tracking_uri(self.uri)
 
         if self.exp_name is not None:
