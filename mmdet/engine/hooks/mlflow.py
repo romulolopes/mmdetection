@@ -45,18 +45,26 @@ class MlflowLoggerHook(LoggerHook):
                  reset_flag: bool = False,
                  by_epoch: bool = True,
                  uri=None):
+        print("------------------------------------")
+        print("Debug start")
+        print("01")
         super().__init__(interval, ignore_last, reset_flag, by_epoch)
+        print("02")
         self.import_mlflow()
+        print("03")
         self.exp_name = exp_name
         self.tags = tags
         self.params = params
         self.log_model = log_model
         self.uri = uri
+        print("04")
+        print("------------------------------------")
 
     def import_mlflow(self) -> None:
         try:
             import mlflow
             import mlflow.pytorch as mlflow_pytorch
+            
         except ImportError:
             raise ImportError(
                 'Please run "pip install mlflow" to install mlflow')
