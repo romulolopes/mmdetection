@@ -18,6 +18,9 @@ Train
 
 `python tools/train.py configs/mask_rcnn/autokary2022.py `
 
+test
+
+`python tools/test.py configs/mask_rcnn/autokary2022.py work_dirs/autokary2022/epoch_12.pth`
 
 
 <div align="center">
