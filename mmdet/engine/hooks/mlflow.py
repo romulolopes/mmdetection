@@ -48,7 +48,7 @@ class MlflowLoggerHook(LoggerHook):
                  ignore_last: bool = True,
                  reset_flag: bool = False,
                  by_epoch: bool = True):
-        super().__init__(interval=interval, ignore_last=ignore_last)
+        super().__init__(interval=interval, ignore_last=ignore_last,log_metric_by_epoch=by_epoch)
         #super().__init__(interval, ignore_last, reset_flag, by_epoch)
         self.import_mlflow()
         self.exp_name = exp_name
