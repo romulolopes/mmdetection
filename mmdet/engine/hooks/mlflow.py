@@ -88,13 +88,6 @@ class MlflowLoggerHook(LoggerHook):
     @master_only
     def after_val_epoch(self, runner, metrics) -> None:
         _metrics = {key.replace('coco/', ''): value for key, value in metrics.items()}
-        print("----------------------------------")
-        
-        print("----------------------------------")
-        print(f"epoch {runner.epoch}")
-        print("----------------------------------")
-        print("----------------------------------")
-        
         self.mlflow.log_metrics(_metrics, step=runner.epoch+1)
 
     @master_only
