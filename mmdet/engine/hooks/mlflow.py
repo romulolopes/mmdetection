@@ -91,7 +91,7 @@ class MlflowLoggerHook(LoggerHook):
         print("----------------------------------")
         
         print("----------------------------------")
-        print(f"epoch {runner.epoch})
+        print(f"epoch {runner.epoch}")
         print("----------------------------------")
         print("----------------------------------")
         
