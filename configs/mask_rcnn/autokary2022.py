@@ -41,10 +41,14 @@ test_dataloader = dict(
 val_evaluator = dict(ann_file=data_root + 'val/_annotations.coco.json')
 test_evaluator = dict(ann_file=data_root + 'test/_annotations.coco.json')
 
-# custom hooks
-custom_hooks = [
-    dict(type='MlflowLoggerHook',  exp_name="Mask RCNN" )
-]
-
 # We can use the pre-trained Mask RCNN model to obtain higher performance
 load_from = 'https://download.openmmlab.com/mmdetection/v2.0/mask_rcnn/mask_rcnn_r50_caffe_fpn_mstrain-poly_3x_coco/mask_rcnn_r50_caffe_fpn_mstrain-poly_3x_coco_bbox_mAP-0.408__segm_mAP-0.37_20200504_163245-42aa3d00.pth'
+
+
+mlflow_tags = {
+        "model_type": "Mask RCNN",
+        "dataset": "AutoKary 2022",
+}
+custom_hooks = [
+    dict(type='MlflowLoggerHook',  exp_name="Mask RCNN" , params=mlflow_tags)
+]
