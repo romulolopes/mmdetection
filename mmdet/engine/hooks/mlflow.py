@@ -1,10 +1,13 @@
-
+import os
 from typing import Dict, Optional
 
 from mmengine.dist import master_only
 from mmdet.registry import HOOKS
 
 from mmengine.hooks import LoggerHook
+
+os.environ['MLFLOW_TRACKING_USERNAME'] = os.environ.get('DAGSHUB_USER')
+os.environ['MLFLOW_TRACKING_PASSWORD'] = os.environ.get('DAGSHUB_TOKEN')
 
 @HOOKS.register_module()
 class MlflowLoggerHook(LoggerHook):
