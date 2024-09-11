@@ -68,6 +68,7 @@ class MlflowLoggerHook(LoggerHook):
     @master_only
     def before_run(self, runner) -> None:
         super().before_run(runner)
+        print(self.uri)
         self.mlflow.set_tracking_uri(self.uri)
 
         if self.exp_name is not None:
@@ -76,7 +77,7 @@ class MlflowLoggerHook(LoggerHook):
                 self.mlflow.create_experiment(self.exp_name)
 
             self.mlflow.set_experiment(self.exp_name)
-            
+
         if self.tags is not None:
             self.mlflow.set_tags(self.tags)
         if self.params is not None:
