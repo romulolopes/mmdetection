@@ -41,12 +41,9 @@ test_dataloader = dict(
 val_evaluator = dict(ann_file=data_root + 'val/_annotations.coco.json')
 test_evaluator = dict(ann_file=data_root + 'test/_annotations.coco.json')
 
-import os
-dagshub_uri = os.environ.get('DAGSHUB_MLFLOW')
-
 # custom hooks
 custom_hooks = [
-    dict(type='MlflowLoggerHook', interval=50 , exp_name="Mask RCNN", uri=dagshub_uri )
+    dict(type='MlflowLoggerHook',  exp_name="Mask RCNN" )
 ]
 
 # We can use the pre-trained Mask RCNN model to obtain higher performance
