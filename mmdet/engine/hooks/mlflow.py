@@ -72,7 +72,6 @@ class MlflowLoggerHook(LoggerHook):
     @master_only
     def before_run(self, runner) -> None:
         super().before_run(runner)
-        print(self.uri)
         self.mlflow.set_tracking_uri(self.uri)
 
         if self.exp_name is not None:
@@ -89,6 +88,13 @@ class MlflowLoggerHook(LoggerHook):
     @master_only
     def after_val_epoch(self, runner, metrics) -> None:
         _metrics = {key.replace('coco/', ''): value for key, value in metrics.items()}
+        print("----------------------------------")
+        
+        print("----------------------------------")
+        print(f"epoch {runner.epoch})
+        print("----------------------------------")
+        print("----------------------------------")
+        
         self.mlflow.log_metrics(_metrics, step=runner.epoch+1)
 
     @master_only
