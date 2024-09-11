@@ -46,7 +46,7 @@ dagshub_uri = os.environ.get('DAGSHUB_MLFLOW')
 
 # custom hooks
 custom_hooks = [
-    dict(type='MlflowLoggerHook', interval=50 , exp_name="Nome Teste", uri=dagshub_uri )
+    dict(type='MlflowLoggerHook', interval=50 , exp_name="Mask RCNN", uri=dagshub_uri )
 ]
 
 # We can use the pre-trained Mask RCNN model to obtain higher performance
