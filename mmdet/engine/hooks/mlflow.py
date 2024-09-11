@@ -87,7 +87,7 @@ class MlflowLoggerHook(LoggerHook):
             self.mlflow.log_params(self.params)
 
     @master_only
-    def after_train_iter(self, runner) -> None:
+    def after_val_epoch(self, runner) -> None:
         print("-Debug--------------------------------------- ")
         tags = self.get_loggable_tags(runner)
         print(f"Tags:{tags}")
