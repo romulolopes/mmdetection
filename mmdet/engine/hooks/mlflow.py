@@ -71,7 +71,12 @@ class MlflowLoggerHook(LoggerHook):
         self.mlflow.set_tracking_uri(self.uri)
 
         if self.exp_name is not None:
+            experiment_exists = self.mlflow.get_experiment_by_name(self.exp_name) 
+            if not experiment_exists: 
+                self.mlflow.create_experiment(self.exp_name)
+
             self.mlflow.set_experiment(self.exp_name)
+            
         if self.tags is not None:
             self.mlflow.set_tags(self.tags)
         if self.params is not None:
