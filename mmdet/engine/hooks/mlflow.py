@@ -88,6 +88,8 @@ class MlflowLoggerHook(LoggerHook):
 
     @master_only
     def after_val_epoch(self, runner, metrics) -> None:
+        print(f"----------------------------")
+        print(f"{metrics}")
         self.mlflow.log_metrics(metrics)
 
     @master_only
