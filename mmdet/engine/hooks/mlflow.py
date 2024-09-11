@@ -9,6 +9,7 @@ from mmengine.hooks import LoggerHook
 os.environ['MLFLOW_TRACKING_USERNAME'] = os.environ.get('DAGSHUB_USER')
 os.environ['MLFLOW_TRACKING_PASSWORD'] = os.environ.get('DAGSHUB_TOKEN')
 
+
 @HOOKS.register_module()
 class MlflowLoggerHook(LoggerHook):
     """Class to log metrics and (optionally) a trained model to MLflow.
@@ -43,11 +44,10 @@ class MlflowLoggerHook(LoggerHook):
                  tags: Optional[Dict] = None,
                  params: Optional[Dict] = None,
                  log_model: bool = True,
-                 interval: int = 10,
+                 interval: int = 50,
                  ignore_last: bool = True,
                  reset_flag: bool = False,
-                 by_epoch: bool = True,
-                 uri=None):
+                 by_epoch: bool = True):
         super().__init__(interval=interval, ignore_last=ignore_last)
         #super().__init__(interval, ignore_last, reset_flag, by_epoch)
         self.import_mlflow()
@@ -55,8 +55,9 @@ class MlflowLoggerHook(LoggerHook):
         self.tags = tags
         self.params = params
         self.log_model = log_model
-        self.uri = uri
-        
+        self.uri = os.environ.get('DAGSHUB_MLFLOW')
+
+    
     def import_mlflow(self) -> None:
         try:
             import mlflow
@@ -78,7 +79,6 @@ class MlflowLoggerHook(LoggerHook):
             experiment_exists = self.mlflow.get_experiment_by_name(self.exp_name) 
             if not experiment_exists: 
                 self.mlflow.create_experiment(self.exp_name)
-
             self.mlflow.set_experiment(self.exp_name)
 
         if self.tags is not None:
@@ -88,7 +88,9 @@ class MlflowLoggerHook(LoggerHook):
 
     @master_only
     def log(self, runner) -> None:
+        print("-Debug--------------------------------------- ")
         tags = self.get_loggable_tags(runner)
+        print(f"Tags:{tags}")
         if tags:
             self.mlflow.log_metrics(tags, step=self.get_iter(runner))
 
