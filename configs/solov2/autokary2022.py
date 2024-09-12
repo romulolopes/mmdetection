@@ -77,6 +77,6 @@ mlflow_tags = {
         "dataset": "AutoKary 2022",
 }
 custom_hooks = [
-    dict(type='MlflowLoggerHook',  exp_name="Mask RCNN" , params=mlflow_tags)
+    dict(type='MlflowLoggerHook',  exp_name="Solo v2" , params=mlflow_tags)
 ]
 
