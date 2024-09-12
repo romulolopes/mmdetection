@@ -68,3 +68,15 @@ optim_wrapper = dict(
 
 val_evaluator = dict(metric='segm')
 test_evaluator = val_evaluator
+
+
+
+
+mlflow_tags = {
+        "model_type": "Solo v2",
+        "dataset": "AutoKary 2022",
+}
+custom_hooks = [
+    dict(type='MlflowLoggerHook',  exp_name="Mask RCNN" , params=mlflow_tags)
+]
+
