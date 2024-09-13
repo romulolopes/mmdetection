@@ -172,9 +172,9 @@ auto_scale_lr = dict(base_batch_size=8)
 
 
 mlflow_tags = {
-        "model_type": "Solo v2",
+        "model_type": "YOLACT",
         "dataset": "AutoKary 2022",
 }
 custom_hooks = [
-    dict(type='MlflowLoggerHook',  exp_name="Solo v2" , params=mlflow_tags)
+    dict(type='MlflowLoggerHook',  exp_name="YOLACT" , params=mlflow_tags)
 ]
