@@ -69,8 +69,7 @@ optim_wrapper = dict(
 val_evaluator = dict(metric='segm')
 test_evaluator = val_evaluator
 
-
-
+load_from = 'https://download.openmmlab.com/mmdetection/v2.0/solov2/solov2_r50_fpn_1x_coco/solov2_r50_fpn_1x_coco_20220512_125858-a357fa23.pth'
 
 mlflow_tags = {
         "model_type": "Solo v2",
