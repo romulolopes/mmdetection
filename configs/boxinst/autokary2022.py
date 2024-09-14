@@ -1,4 +1,4 @@
-_base_ = [ '../_base_/datasets/autokary2022.py' ,  '../common/ms-90k_coco.py']
+_base_ = [ '../_base_/datasets/autokary2022.py' ]
 
 # model settings
 model = dict(
