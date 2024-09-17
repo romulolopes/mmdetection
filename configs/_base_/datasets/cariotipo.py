@@ -45,9 +45,10 @@ train_dataloader = dict(
         data_root=data_root,
         ann_file='train/_annotations.coco.json',
         data_prefix=dict(img='train/'),
-        #filter_cfg=dict(filter_empty_gt=True, min_size=32),
+        filter_cfg=dict(filter_empty_gt=True, min_size=16),
         pipeline=train_pipeline,
         backend_args=backend_args))
+
 val_dataloader = dict(
     batch_size=1,
     num_workers=2,
@@ -62,7 +63,6 @@ val_dataloader = dict(
         test_mode=True,
         pipeline=test_pipeline,
         backend_args=backend_args))
-test_dataloader = val_dataloader
 
 val_evaluator = dict(
     type='CocoMetric',
@@ -77,18 +77,19 @@ test_dataloader = dict(
     batch_size=1,
     num_workers=2,
     persistent_workers=True,
-   drop_last=False,
+    drop_last=False,
     sampler=dict(type='DefaultSampler', shuffle=False),
     dataset=dict(
         type=dataset_type,
         data_root=data_root,
-        ann_file=data_root + 'test/_annotations.coco.json',
-       data_prefix=dict(img='test/'),
+        ann_file='test/_annotations.coco.json',
+        data_prefix=dict(img='test/'),
         test_mode=True,
-        pipeline=test_pipeline))
+        pipeline=test_pipeline,
+        backend_args=backend_args))
+
 test_evaluator = dict(
     type='CocoMetric',
     metric='bbox',
-    format_only=True,
-    ann_file=data_root + 'test/_annotations.coco.json',
-    outfile_prefix='./work_dirs/cariotipo/test')
+    format_only=False,
+    ann_file=data_root + 'test/_annotations.coco.json')
