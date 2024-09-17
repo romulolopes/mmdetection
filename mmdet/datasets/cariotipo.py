@@ -23,6 +23,10 @@ class CariotipoDataset(BaseDetDataset):
     # ann_id is unique in coco dataset.
     ANN_ID_UNIQUE = True
 
+    COCOAPI = COCO
+    # ann_id is unique in coco dataset.
+    ANN_ID_UNIQUE = True
+
     def load_data_list(self) -> List[dict]:
         """Load annotations from an annotation file named as ``self.ann_file``
 
