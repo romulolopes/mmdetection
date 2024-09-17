@@ -62,18 +62,20 @@ class CariotipoDataset(BaseDetDataset):
             print("===========================================")
             print(f"load _anns:: {self.coco.load_anns(ann_ids)}")
             print("===========================================")
-
-            raw_ann_info = self.coco.load_anns(ann_ids)
             
+            raw_ann_info = self.coco.load_anns(ann_ids)
+            print("4")
             total_ann_ids.extend(ann_ids)
-
+            print("5")
             parsed_data_info = self.parse_data_info({
                 'raw_ann_info':
                 raw_ann_info,
                 'raw_img_info':
                 raw_img_info
             })
+            print("6")
             data_list.append(parsed_data_info)
+            print("7")
         if self.ANN_ID_UNIQUE:
             assert len(set(total_ann_ids)) == len(
                 total_ann_ids
