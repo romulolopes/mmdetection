@@ -7,6 +7,7 @@ from .base_video_dataset import BaseVideoDataset
 from .cityscapes import CityscapesDataset
 from .coco import CocoDataset
 from .autokary2022 import AutoKary2022Dataset
+from .cariotipo import CariotipoDataset
 from .coco_caption import CocoCaptionDataset
 from .coco_panoptic import CocoPanopticDataset
 from .coco_semantic import CocoSegDataset
