@@ -34,6 +34,7 @@ class CariotipoDataset(BaseDetDataset):
             self.coco = self.COCOAPI(local_path)
         # The order of returned `cat_ids` will not
         # change with the order of the `classes`
+        print(f"self.metainfo: {self.metainfo}")
         self.cat_ids = self.coco.get_cat_ids(
             cat_names=self.metainfo['classes'])
         self.cat2label = {cat_id: i for i, cat_id in enumerate(self.cat_ids)}
