@@ -45,18 +45,22 @@ class CariotipoDataset(BaseDetDataset):
 
         img_ids = self.coco.get_img_ids()
         print("===========================================")
-        print(f"{img_ids}")
+        print(f"img_ids : {img_ids}")
         print("===========================================")
 
         data_list = []
         total_ann_ids = []
         for img_id in img_ids:
+            print("1")
             raw_img_info = self.coco.load_imgs([img_id])[0]
+            print("2")
+            
             raw_img_info['img_id'] = img_id
-
+            print("3")
+            
             ann_ids = self.coco.get_ann_ids(img_ids=[img_id])
             print("===========================================")
-            print(f"{self.coco.load_anns(ann_ids)}")
+            print(f"load _anns:: {self.coco.load_anns(ann_ids)}")
             print("===========================================")
 
             raw_ann_info = self.coco.load_anns(ann_ids)
