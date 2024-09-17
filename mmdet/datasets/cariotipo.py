@@ -154,13 +154,15 @@ class CariotipoDataset(BaseDetDataset):
         # merge the image id sets of the two conditions and use the merged set
         # to filter out images if self.filter_empty_gt=True
         ids_in_cat &= ids_with_ann
+        print("=================================")
+        print(f"ids_in_cat: {ids_in_cat}")
+        print("=================================")
 
         valid_data_infos = []
         for i, data_info in enumerate(self.data_list):
             img_id = data_info['img_id']
             width = data_info['width']
             height = data_info['height']
-            print(f"width: {width} height {height}")
             
             if filter_empty_gt and img_id not in ids_in_cat:
                 continue
