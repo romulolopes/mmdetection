@@ -161,6 +161,7 @@ class CariotipoDataset(BaseDetDataset):
 
         valid_data_infos = []
         for i, data_info in enumerate(self.data_list):
+            print(i)
             img_id = data_info['img_id']
             width = data_info['width']
             height = data_info['height']
