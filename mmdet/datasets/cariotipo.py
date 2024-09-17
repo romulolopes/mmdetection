@@ -165,15 +165,8 @@ class CariotipoDataset(BaseDetDataset):
             width = data_info['width']
             height = data_info['height']
             if filter_empty_gt and img_id not in ids_in_cat:
-                print("continue")
                 continue
-            print("if")
             if min(width, height) >= min_size:
                 valid_data_infos.append(data_info)
-        print("=============================================")
-        print("=============================================")
-        print(f"valid_data_infos: {valid_data_infos}")
-        print("=============================================")
-        print("=============================================")
 
         return valid_data_infos
