@@ -44,6 +44,10 @@ class CariotipoDataset(BaseDetDataset):
         self.cat_img_map = copy.deepcopy(self.coco.cat_img_map)
 
         img_ids = self.coco.get_img_ids()
+        print("===========================================")
+        print(f"{img_ids}")
+        print("===========================================")
+
         data_list = []
         total_ann_ids = []
         for img_id in img_ids:
@@ -51,7 +55,12 @@ class CariotipoDataset(BaseDetDataset):
             raw_img_info['img_id'] = img_id
 
             ann_ids = self.coco.get_ann_ids(img_ids=[img_id])
+            print("===========================================")
+            print(f"{self.coco.load_anns(ann_ids)}")
+            print("===========================================")
+
             raw_ann_info = self.coco.load_anns(ann_ids)
+            
             total_ann_ids.extend(ann_ids)
 
             parsed_data_info = self.parse_data_info({
