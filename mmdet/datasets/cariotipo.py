@@ -14,10 +14,10 @@ from .base_det_dataset import BaseDetDataset
 class CariotipoDataset(BaseDetDataset):
 
     METAINFO = {
-        'classes': ( '0', '1','2'),
+        'classes': ( 'normal', 'alterado'),
         # palette is a list of color tuples, which is used for visualization.
         'palette':
-        [(220, 20, 60), (119, 11, 32), (0, 0, 142)]
+        [(220, 20, 60), (119, 11, 32)]
     }
     COCOAPI = COCO
     # ann_id is unique in coco dataset.
