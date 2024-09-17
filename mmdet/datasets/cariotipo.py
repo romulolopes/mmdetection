@@ -82,7 +82,7 @@ class CariotipoDataset(BaseDetDataset):
             ), f"Annotation ids in '{self.ann_file}' are not unique!"
 
         del self.coco
-
+        print(f"datalist:{data_list} ")
         return data_list
 
     def parse_data_info(self, raw_data_info: dict) -> Union[dict, List[dict]]:
