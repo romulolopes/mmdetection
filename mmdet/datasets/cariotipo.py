@@ -44,45 +44,30 @@ class CariotipoDataset(BaseDetDataset):
         self.cat_img_map = copy.deepcopy(self.coco.cat_img_map)
 
         img_ids = self.coco.get_img_ids()
-        print("===========================================")
-        print(f"img_ids : {img_ids}")
-        print("===========================================")
-
         data_list = []
         total_ann_ids = []
         for img_id in img_ids:
-            print("1")
             raw_img_info = self.coco.load_imgs([img_id])[0]
-            print("2")
-            
             raw_img_info['img_id'] = img_id
-            print("3")
-            
+
             ann_ids = self.coco.get_ann_ids(img_ids=[img_id])
-            print("===========================================")
-            print(f"load _anns:: {self.coco.load_anns(ann_ids)}")
-            print("===========================================")
-            
             raw_ann_info = self.coco.load_anns(ann_ids)
-            print("4")
             total_ann_ids.extend(ann_ids)
-            print("5")
+
             parsed_data_info = self.parse_data_info({
                 'raw_ann_info':
                 raw_ann_info,
                 'raw_img_info':
                 raw_img_info
             })
-            print("6")
             data_list.append(parsed_data_info)
-            print("7")
         if self.ANN_ID_UNIQUE:
             assert len(set(total_ann_ids)) == len(
                 total_ann_ids
             ), f"Annotation ids in '{self.ann_file}' are not unique!"
 
         del self.coco
-        print(f"datalist:{data_list} ")
+
         return data_list
 
     def parse_data_info(self, raw_data_info: dict) -> Union[dict, List[dict]]:
@@ -183,5 +168,10 @@ class CariotipoDataset(BaseDetDataset):
                 continue
             if min(width, height) >= min_size:
                 valid_data_infos.append(data_info)
+        print("=============================================")
+        print("=============================================")
+        print(f"valid_data_infos: {valid_data_infos}")
+        print("=============================================")
+        print("=============================================")
 
         return valid_data_infos
