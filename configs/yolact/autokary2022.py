@@ -169,7 +169,7 @@ env_cfg = dict(cudnn_benchmark=True)
 # base_batch_size = (1 GPUs) x (8 samples per GPU)
 auto_scale_lr = dict(base_batch_size=8)
 
-
+load_from = "https://download.openmmlab.com/mmdetection/v2.0/yolact/yolact_r50_1x8_coco/yolact_r50_1x8_coco_20200908-f38d58df.pth"
 
 mlflow_tags = {
         "model_type": "YOLACT",
