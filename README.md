@@ -6,7 +6,7 @@ criar imagem
 
 run container
 
-`sudo docker run --shm-size=16g --gpus all -it --name mmdetection -e  CUDA_VISIBLE_DEVICES=0 -e DAGSHUB_MLFLOW='https://dagshub.com/romulo.lopes/autokary2022.mlflow' -e DAGSHUB_USER='romulo.lopes' -e DAGSHUB_TOKEN='04fda3b7596e89120ffbefbc58acd1684c76e14a' -v /home/edson-cavalcanti/projetos/autokary2022/mmdetection:/mmdetection -v /home/edson-cavalcanti/projetos/autokary2022/dataset:/mmdetection/data/autokary2022/  mmdetection bash`
+`sudo docker run --shm-size=16g --gpus all -it --name mmdetection -e  CUDA_VISIBLE_DEVICES=0 -e DAGSHUB_MLFLOW='https://dagshub.com/edson.cavalcanti/autokary2022.mlflow' -e DAGSHUB_USER='edson.cavalcanti' -e DAGSHUB_TOKEN='9c14fa5a7c4017079e54de729d6afd744fdec901' -v /home/edson-cavalcanti/projetos/autokary2022/mmdetection:/mmdetection -v /home/edson-cavalcanti/projetos/autokary2022/dataset:/mmdetection/data/autokary2022/  mmdetection bash`
 
 
 Train
