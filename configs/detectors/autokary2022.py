@@ -30,6 +30,22 @@ model = dict(
             stage_with_sac=(False, True, True, True),
             pretrained='torchvision://resnet50',
             style='pytorch')))
+
+val_evaluator = dict(
+    type='CocoMetric',
+    ann_file=data_root + 'val/_annotations.coco.json',
+    metric=['bbox'],
+    format_only=False,
+    backend_args=backend_args)
+
+
+test_evaluator = dict(
+    type='CocoMetric',
+    ann_file=data_root + 'test/_annotations.coco.json',
+    metric=['bbox'],
+    format_only=False,
+    backend_args=backend_args)
+
 load_from = 'https://download.openmmlab.com/mmdetection/v2.0/detectors/detectors_cascade_rcnn_r50_1x_coco/detectors_cascade_rcnn_r50_1x_coco-32a10ba0.pth'
 
 mlflow_tags = {
