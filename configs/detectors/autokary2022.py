@@ -30,6 +30,9 @@ model = dict(
             stage_with_sac=(False, True, True, True),
             pretrained='torchvision://resnet50',
             style='pytorch')))
+data_root = 'data/autokary2022/'
+backend_args = None
+
 
 val_evaluator = dict(
     type='CocoMetric',
