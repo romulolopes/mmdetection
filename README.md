@@ -1,3 +1,25 @@
+[x] Mask R-CNN (ICCV'2017)
+Cascade Mask R-CNN (CVPR'2018)
+Mask Scoring R-CNN (CVPR'2019)
+Hybrid Task Cascade (CVPR'2019)
+[x] YOLACT (ICCV'2019)
+InstaBoost (ICCV'2019)
+SOLO (ECCV'2020)
+[x] PointRend (CVPR'2020)
+[x] DetectoRS (ArXiv'2020)
+[x] SOLOv2 (NeurIPS'2020)
+SCNet (AAAI'2021)
+QueryInst (ICCV'2021)
+Mask2Former (ArXiv'2021)
+CondInst (ECCV'2020)
+SparseInst (CVPR'2022)
+RTMDet (ArXiv'2022)
+BoxInst (CVPR'2021)
+ConvNeXt-V2 (Arxiv'2023)
+
+
+
+
 criar imagem
 
 `docker build -t mmdetection .`
