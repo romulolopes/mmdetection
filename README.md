@@ -4,10 +4,10 @@ Controle dos trabalhos reproduzidos
 - [ ] Mask Scoring R-CNN (CVPR'2019)
 - [ ] Hybrid Task Cascade (CVPR'2019)
 - [x] YOLACT (ICCV'2019)
-- [ ] InstaBoost (ICCV'2019)
+- [x] InstaBoost (ICCV'2019)  [Falta treinar]
 - [ ] SOLO (ECCV'2020)
-- [x] PointRend (CVPR'2020)
-- [x] DetectoRS (ArXiv'2020)
+- [x] PointRend (CVPR'2020) [Falta treinar]
+- [x] DetectoRS (ArXiv'2020) [Faltar treinar]
 - [x] SOLOv2 (NeurIPS'2020)
 - [ ] SCNet (AAAI'2021)
 - [ ] QueryInst (ICCV'2021)
@@ -15,7 +15,7 @@ Controle dos trabalhos reproduzidos
 - [ ] CondInst (ECCV'2020)
 - [ ] SparseInst (CVPR'2022)
 - [ ] RTMDet (ArXiv'2022)
-- [ ] BoxInst (CVPR'2021)
+- [X] BoxInst (CVPR'2021) [Faltar treinar]
 - [ ] ConvNeXt-V2 (Arxiv'2023)
 
 
