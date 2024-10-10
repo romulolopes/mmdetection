@@ -9,7 +9,7 @@ Controle dos trabalhos reproduzidos
 - [x] PointRend (CVPR'2020) [Falta treinar]
 - [x] DetectoRS (ArXiv'2020) [Faltar treinar]
 - [x] SOLOv2 (NeurIPS'2020)
-- [x] SCNet (AAAI'2021)
+- [x] SCNet (AAAI'2021) [Falta treinar] 
 - [ ] QueryInst (ICCV'2021)
 - [ ] Mask2Former (ArXiv'2021)
 - [ ] CondInst (ECCV'2020)
