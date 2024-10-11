@@ -10,7 +10,7 @@ Controle dos trabalhos reproduzidos
 - [x] DetectoRS (ArXiv'2020) [Faltar treinar]
 - [x] SOLOv2 (NeurIPS'2020)
 - [x] SCNet (AAAI'2021) [Falta treinar] 
-- [ ] QueryInst (ICCV'2021)
+- [x] QueryInst (ICCV'2021) [Falta treinar] 
 - [ ] Mask2Former (ArXiv'2021)
 - [ ] CondInst (ECCV'2020)
 - [ ] SparseInst (CVPR'2022)
