@@ -1,3 +1,5 @@
+#editado o arquivo mmdetection/configs/cascade_rcnn/cascade-mask-rcnn_r50_fpn_1x_coco.py para incluir autokary2022.py como dataset
+
 _base_ = [
   'mask-rcnn_r50_fpn_instaboost-4x_coco.py'
 ]
