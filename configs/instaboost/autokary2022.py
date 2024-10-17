@@ -1,5 +1,4 @@
 _base_ = [
-  '../_base_/datasets/autokary2022.py',
   'mask-rcnn_r50_fpn_instaboost-4x_coco.py'
 ]
 
