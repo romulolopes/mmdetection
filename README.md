@@ -19,6 +19,10 @@ Controle dos trabalhos reproduzidos
 - [ ] ConvNeXt-V2 (Arxiv'2023)
 
 
+Obs.:
+
+o arquivo  `/configs/_base_/datasets/coco_instance.py` e `/configs/_base_/datasets/autokary2022.py` são iguais e apontam para o dataset autokary 2022
+
 
 
 criar imagem
