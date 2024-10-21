@@ -4,7 +4,7 @@ Controle dos trabalhos reproduzidos
 - [ ] Mask Scoring R-CNN (CVPR'2019)
 - [ ] Hybrid Task Cascade (CVPR'2019)
 - [x] YOLACT (ICCV'2019)
-- [x] InstaBoost (ICCV'2019)  [Falta treinar]
+- [x] InstaBoost (ICCV'2019) 
 - [x] SOLO (ECCV'2020) [Falta treinar] 
 - [x] PointRend (CVPR'2020) [Falta treinar]
 - [x] DetectoRS (ArXiv'2020) [Faltar treinar]
