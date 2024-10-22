@@ -20,8 +20,7 @@ Controle dos trabalhos reproduzidos
 
 
 Obs.:
-
-o arquivo  `/configs/_base_/datasets/coco_instance.py` e `/configs/_base_/datasets/autokary2022.py` são iguais e apontam para o dataset autokary 2022
+Os arquivos de banco: `configs/common/ms-90k_coco.py` , `/configs/_base_/datasets/coco_instance.py` e `/configs/_base_/datasets/autokary2022.py` são iguais e apontam para o dataset autokary 2022
 
 
 
