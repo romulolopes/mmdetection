@@ -5,7 +5,7 @@ Controle dos trabalhos reproduzidos
 - [ ] Hybrid Task Cascade (CVPR'2019)
 - [x] YOLACT (ICCV'2019)
 - [x] InstaBoost (ICCV'2019) 
-- [x] SOLO (ECCV'2020) [Falta treinar] 
+- [x] SOLO (ECCV'2020) 
 - [x] PointRend (CVPR'2020) [Falta treinar]
 - [x] DetectoRS (ArXiv'2020) [Faltar treinar]
 - [x] SOLOv2 (NeurIPS'2020)
