@@ -1,4 +1,8 @@
-_base_ = [ '../_base_/datasets/autokary2022.py' ]
+#_base_ = [ '../_base_/datasets/autokary2022.py' ]
+
+#bsedo r50_fpn_ms
+#ms-90k alterado para o banco autokary
+_base_ = '../common/ms-90k_coco.py'
 
 # model settings
 model = dict(
