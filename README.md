@@ -15,7 +15,7 @@ Controle dos trabalhos reproduzidos
 - [ ] CondInst (ECCV'2020)
 - [ ] SparseInst (CVPR'2022)
 - [ ] RTMDet (ArXiv'2022)
-- [X] BoxInst (CVPR'2021) [Faltar treinar]
+- [X] BoxInst (CVPR'2021) 
 - [ ] ConvNeXt-V2 (Arxiv'2023)
 
 
