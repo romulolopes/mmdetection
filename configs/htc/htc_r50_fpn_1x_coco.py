@@ -27,7 +27,10 @@ train_pipeline = [
     dict(type='RandomFlip', prob=0.5),
     dict(type='PackDetInputs')
 ]
+
+'''
 train_dataloader = dict(
     dataset=dict(
         data_prefix=dict(img='train/', seg='stuffthingmaps/train/'),
         pipeline=train_pipeline))
+'''
