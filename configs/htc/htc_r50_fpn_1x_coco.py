@@ -28,9 +28,9 @@ train_pipeline = [
     dict(type='PackDetInputs')
 ]
 
-'''
+
 train_dataloader = dict(
     dataset=dict(
-        data_prefix=dict(img='train/', seg='stuffthingmaps/train/'),
+        data_prefix=dict(img='train/', seg='train/'),
         pipeline=train_pipeline))
-'''
+
